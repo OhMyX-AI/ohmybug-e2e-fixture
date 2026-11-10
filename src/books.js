@@ -1,7 +1,8 @@
 import { query } from './db.js'
 
+/** Every book, in id order. */
 export function listBooks() {
-  return query('SELECT * FROM books')
+  return query('SELECT * FROM books').sort((a, b) => a.id - b.id)
 }
 
 export function getBook(id) {
