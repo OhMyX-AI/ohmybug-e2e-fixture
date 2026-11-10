@@ -9,4 +9,4 @@ It is not a product and takes no contributions.
 - `big`: `planted` plus a large generated data file, so the diff is over the inline size.
 - `scan`: the `planted` change split into a few commits, for repository scans.
 
-Run: `node src/server.js` (Node 18+, no dependencies).
+Run: `node src/server.js` (Node 22.13+ for `node:sqlite`, no dependencies).
