@@ -11,3 +11,9 @@ test('formats a list', async () => {
   assert.equal(formatList([{ title: 'A', author: 'B', year: 2020 }]), 'A by B (2020)')
   assert.equal(formatList([{ title: 'Two\nLines' }, {}]), 'Two Lines\nUntitled')
 })
+
+test('searches by author', async () => {
+  const { searchByAuthor } = await import('../src/search.js')
+  assert.equal(searchByAuthor(new URLSearchParams('author=Mia Chen'))[0].title, 'Quiet Code')
+  assert.deepEqual(searchByAuthor(new URLSearchParams('author=')), [])
+})
